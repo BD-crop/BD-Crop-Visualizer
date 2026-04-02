@@ -1,3 +1,7 @@
+<?php
+  INCLUDE_ONCE __DIR__."/compotent/navbar.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +17,8 @@
 
 
     <?php
+        navfile_navigator(".");
 
-        readfile("navbar.php");
     ?>
 
 <div class="container">
@@ -45,8 +49,12 @@
 
     element.addEventListener("mouseleave" ,(e)=>{
       element.style.fill="white";
+      district_name.textContent="";
     });
-
+    
+    element.addEventListener("click" ,(e)=>{
+      window.location.href=encodeURI("path/index.php?dis="+element.id);
+    });
   });
 
   let path1 = document.querySelectorAll("g>g");
@@ -71,7 +79,7 @@
 
     element.addEventListener("mouseleave" ,(e)=>{
       element.style.fill="white";
-      district_name.textContent=element.id;
+      district_name.textContent="";
         
       let ui = element.children;
 
@@ -80,6 +88,9 @@
         });
     });
     
+    element.addEventListener("click" ,(e)=>{
+      window.location.href=encodeURI("path/index.php?dis="+element.id);
+    });
 
   });
 

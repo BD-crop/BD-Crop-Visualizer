@@ -48,3 +48,6 @@ body {
     height: auto;
 }
 
+#district_name{
+    height: 2rem;
+}
