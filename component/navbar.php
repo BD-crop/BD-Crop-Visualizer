@@ -1,12 +1,12 @@
 <?php
     function navfile_navigator($path){
         return "<div class=\"navbar\">
-    <a href=\".$path./index.php.\" class=\"icon-holder\">
-        <img src=\"./Bangladesh.png\" alt=\"Product logo\">
+    <a href=\"$path/index.php.\" class=\"icon-holder\">
+        <img src=\"$path/Bangladesh.png\" alt=\"Product logo\">
         <p>BD Crop</p>
     </a>
 
-    <form action=\".$path./search.php\" method=\"POST\" id=\"navbar_form\"> 
+    <form action=\"$path/search.php\" method=\"POST\" id=\"navbar_form\"> 
         <select name=\"selection_type\" id=\"selectElement\">
             <option value=\"district\">District</option>
             <option value=\"crop name\">Crop Name</option>

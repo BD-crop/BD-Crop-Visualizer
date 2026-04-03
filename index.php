@@ -1,5 +1,5 @@
 <?php
-  INCLUDE_ONCE __DIR__."/compotent/navbar.php";
+  INCLUDE_ONCE __DIR__."/component/navbar.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 
 
     <?php
-        navfile_navigator(".");
+        echo navfile_navigator(".");
 
     ?>
 
@@ -29,7 +29,7 @@
   <div class="card map-card">
     <h3>Select a District</h3>
     <h3 id="district_name"></h3>
-    <?php readfile("Bangladesh District svg.svg"); ?>
+    <?php readfile("./component/Bangladesh District svg.svg"); ?>
   </div>
 </div>
 
