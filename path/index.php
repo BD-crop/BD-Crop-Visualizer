@@ -32,7 +32,7 @@
 
         echo navfile_navigator("..");
         $name = changer($_GET['dis']);
-        $assos = PDO_::initializer()->get_district($name)[0];
+        $assos = PDO_::initializer(__DIR__."/../database")->get_district($name)[0];
         $image_array= explode(';',$assos["imagePath"]);
         
 

@@ -1,10 +1,11 @@
 <?php
     INCLUDE_ONCE __DIR__."/database/create_initial_state.php";
+
     if(isset($_POST['submission'])){
         echo "dopes";
         print_r($_POST);
         echo $_POST['district_name'];
-        $obj=PDO_::initializer();  
+        $obj=PDO_::initializer(__DIR__."/database");  
         $obj-> insert_district($_POST['district_name'] , $_POST['description'] ,$_POST['image_url']); 
         header("Location: admin.php");
     }

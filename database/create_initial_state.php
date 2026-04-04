@@ -9,15 +9,15 @@ class PDO_ {
     private static $init = null;
     public $pdo;
 
-    public static function initializer() {
+    public static function initializer($path) {
         if (self::$init !== null) {
             return self::$init;
         }
-        self::$init = new PDO_();
+        self::$init = new PDO_($path);
         return self::$init;
     }
 
-    private function __construct() {
+    private function __construct($path) {
         $this->pdo = new PDO("mysql:host=localhost;port=3306;charset=utf8mb4", 'root', '');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -25,7 +25,7 @@ class PDO_ {
         $this->pdo = new PDO("mysql:host=localhost;port=3306;dbname=bd_crop;charset=utf8mb4", 'root', '');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $this->pdo->exec(file_get_contents("./database/bd_crop.sql"));
+            $this->pdo->exec(file_get_contents($path."/bd_crop.sql"));
 
         }catch(Exception $e){
         }
