@@ -9,7 +9,7 @@
     }
     function changer($name):string{
         if($name == "COX_S_BAZAR"){
-            return "Cox%27s_Bazar" ;
+            return "Cox's Bazar" ;
         }
 
         return ucfirst(strtolower($name))."";
