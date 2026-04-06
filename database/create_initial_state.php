@@ -34,14 +34,14 @@ class PDO_ {
     }
 
     public function insert_district(string $name , string $description , string $imagePath){
-        $sql ="Insert into district(District_name , description , imagePath) values(?,?,?)";
+        $sql ="Insert into Location(location_name , description , imagePath) values(?,?,?)";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$name , $description , $imagePath]);
     }
 
     public function get_district(string $name){
-        $sql ="select * from district where District_name=?";
+        $sql ="select * from Location where location_name=?";
 
        
         $stmt = $this->pdo->prepare($sql);

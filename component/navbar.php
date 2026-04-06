@@ -5,7 +5,9 @@
         <img src=\"$path/Bangladesh.png\" alt=\"Product logo\">
         <p>BD Crop</p>
     </a>
-
+    <a href=\"$path/advanced_search.php\">
+    <h3>Advanced Search</h3>
+    </a>
     <form action=\"$path/search.php\" method=\"POST\" id=\"navbar_form\"> 
         <select name=\"selection_type\" id=\"selectElement\">
             <option value=\"district\">District</option>

@@ -40,7 +40,7 @@
     
 <div style="border:1px solid #ccc; padding:15px; margin-bottom:20px; border-radius:4px; font-family:Arial, sans-serif;">
     <h3 style="margin:0 0 10px 0; font-size:20px; color:#222; font-weight:600;">
-        <?= htmlspecialchars($assos['District_name']) ?>
+        <?= htmlspecialchars($assos['location_name']) ?>
     </h3>
 
     <p style="margin:0 0 10px 0; line-height:1.5; color:#333; font-size:14px;">
@@ -52,7 +52,7 @@
         foreach($image_array as $ele){
             $ele = trim($ele);
             if(!empty($ele)){
-                echo "<img src=\"" . htmlspecialchars($ele) . "\" alt=\"{$assos['District_name']}\" style=\"width:150px; height:auto; border:1px solid #ddd; border-radius:3px; padding:2px;\" />";
+                echo "<img src=\"" . htmlspecialchars($ele) . "\" alt=\"{$assos['location_name']}\" style=\"width:150px; height:auto; border:1px solid #ddd; border-radius:3px; padding:2px;\" />";
             }
         }
         ?>
