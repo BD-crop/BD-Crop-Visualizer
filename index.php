@@ -20,36 +20,59 @@
         echo navfile_navigator(".");
 
     ?>
+    <h3 id="make">Select a  <select  id="selectType">
+            <option value="District">District</option>
+            <option value="Country">Country</option>
+        </select></h3>
+            <h3 id="location_name" ></h3>
 
-<div class="container">
+<div class="container " id="district">
   <div class="card image-card">
     <img src="./paddy-harvest.webp" alt="A picture of farmers">
   </div>
 
   <div class="card map-card">
-    <h3>Select a District</h3>
-    <h3 id="district_name"></h3>
+
     <?php readfile("./component/Bangladesh District svg.svg"); ?>
+
   </div>
+</div> 
+
+<div class="container" id="world">
+    <?php readfile("./component/world svg.svg"); ?>
+
+
 </div>
 
 
 
 <script >
+
+  world.style.display="none";
+  selectType.addEventListener("change" , function(){
+      if(this.value==="District"){
+        world.style.display="none";
+        district.style.display="flex";
+      }
+      else if(this.value==="Country"){
+        world.style.display="flex";
+        district.style.display="none";
+      }
+  });
   let path = document.querySelectorAll("path");
   path.forEach((element) => {
     element.style.fill="white";
     element.style.stroke = "black";
-    element.style.strokeWidth = "0.5";
+    element.style.strokeWidth = "0.5px";
 
     element.addEventListener("mouseover" ,(e)=>{
       element.style.fill="black";
-      district_name.textContent=element.id; 
+      location_name.textContent=element.id; 
     });
 
     element.addEventListener("mouseleave" ,(e)=>{
       element.style.fill="white";
-      district_name.textContent="";
+      location_name.textContent="";
     });
     
     element.addEventListener("click" ,(e)=>{
@@ -67,7 +90,7 @@
     element.addEventListener("mouseover" ,(e)=>{
         element.style.fill="black";
 
-        district_name.textContent=element.id; 
+        location_name.textContent=element.id; 
         
         let ui = element.children;
 
@@ -79,7 +102,7 @@
 
     element.addEventListener("mouseleave" ,(e)=>{
       element.style.fill="white";
-      district_name.textContent="";
+      location_name.textContent="";
         
       let ui = element.children;
 
@@ -95,9 +118,14 @@
   });
 
 
+  let paths= document.querySelectorAll("#world path");
+  paths.forEach((element) => {
+    element.style.fill="white";
+    element.style.stroke = "black";
+    element.style.strokeWidth = "3px";
+    element.style.zindex=10;
 
-
-
+  });
   
 </script>
 </body>

@@ -9,8 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 100vh;
+    height: 86vh;
     padding: 20px;
+
 }
 
 .card {
@@ -19,8 +20,30 @@ body {
     padding: 20px;
     transition: all 0.3s ease;
 }
+#world{
+  position: relative;
+  z-index: 0;
+}
 
+/* #world{
+    border : 1px solid black;
+} */
+select , option {
+    z-index:100 ;
+    pointer-events: auto;
+}
+#location_name ,#make{
+    display: inline;
+    min-height: 2rem;
+}
 
+#selectType{
+    position: relative;
+    z-index: 100;
+}
+body{
+    z-index: -2;
+}
 
 .image-card img {
     width: 320px;
